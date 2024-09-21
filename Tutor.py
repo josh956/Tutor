@@ -2,6 +2,7 @@ import os
 import streamlit as st
 import openai
 import re
+api_key = "xx"
 
 def ask_chatgpt(question, api_key):
     # Use the OpenAI API to check if the question is homework-related and then provide an answer
@@ -65,11 +66,7 @@ def render_answer_with_latex(answer):
             # Render normal text
             st.write(block)
 
-# Fetch API key from the environment variable
-api_key = os.getenv("pk")
-if not api_key:
-    st.error("API key not found. Please set the 'pk' environment variable.")
-    st.stop()
+
 
 # Streamlit UI for the website
 st.title("Homework Helper for Kids ✏️")
